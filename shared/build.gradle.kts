@@ -1,8 +1,11 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.buildConfig)
 }
 
 kotlin {
@@ -15,7 +18,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -28,9 +31,24 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
-            //put your multiplatform dependencies here
+        androidMain.dependencies {
+            api(libs.koin.android)
+            implementation(libs.ktor.android)
         }
+
+        commonMain.dependencies {
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.content.negotiation)
+            api(libs.ktor.serialization.json)
+            api(libs.koin.core)
+            implementation(libs.kotlinx.datetime)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.darwin)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
@@ -47,4 +65,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+private fun getProperties(fileName: String): Properties {
+    val properties = Properties()
+    file(fileName).inputStream().use { input ->
+        properties.load(input)
+    }
+    return properties
+}
+
+// Load the properties
+private val configProperties = getProperties("../keystore.properties")
+
+buildConfig {
+    packageName("uz.otamurod.socialmediakmp")
+
+    buildConfigField("string", "BASE_URL", "\"${configProperties["BASE_URL"]}\"")
 }
