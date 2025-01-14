@@ -50,7 +50,10 @@ fun LoginScreen(
     onNavigateToSignup: () -> Unit
 ) {
     val context = LocalContext.current
-    Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+
+    Box(
+        modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center
+    ) {
         Column(
             modifier = modifier
                 .fillMaxSize()
@@ -112,10 +115,10 @@ fun LoginScreen(
     }
 
     LaunchedEffect(
-        key1 = uiState.authenticationSucceed,
+        key1 = uiState.isAuthenticating,
         key2 = uiState.authErrorMessage,
         block = {
-            if (uiState.authenticationSucceed) {
+            if (uiState.isAuthSucceed) {
                 onNavigateToHome()
             }
 

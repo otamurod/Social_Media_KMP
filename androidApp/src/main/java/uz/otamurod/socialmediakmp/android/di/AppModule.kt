@@ -6,6 +6,6 @@ import uz.otamurod.socialmediakmp.android.feature.auth.login.LoginViewModel
 import uz.otamurod.socialmediakmp.android.feature.auth.signup.SignUpViewModel
 
 val appModule = module {
-    viewModel { LoginViewModel() }
-    viewModel { SignUpViewModel() }
+    viewModel { LoginViewModel(get()) }
+    viewModel { SignUpViewModel(get()) }
 }
