@@ -8,7 +8,7 @@ import uz.otamurod.socialmediakmp.android.feature.destinations.HomeScreenDestina
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.SignUpDestination
 
-@Destination(start = true)
+@Destination
 @Composable
 fun Login(
     navigator: DestinationsNavigator
