@@ -3,14 +3,18 @@ package uz.otamurod.socialmediakmp.android.feature.auth.signup
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.datastore.core.DataStore
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import uz.otamurod.socialmediakmp.android.common.datastore.UserSettings
+import uz.otamurod.socialmediakmp.android.common.datastore.mapper.AuthResultMapper
 import uz.otamurod.socialmediakmp.feature.auth.domain.usecase.SignUpUseCase
 import uz.otamurod.socialmediakmp.feature.common.util.ResultWrapper
 
 class SignUpViewModel(
-    private val signUpUseCase: SignUpUseCase
+    private val signUpUseCase: SignUpUseCase,
+    private val dataStore: DataStore<UserSettings>
 ) : ViewModel() {
     var uiState by mutableStateOf(SignUpUiState())
         private set
@@ -22,6 +26,10 @@ class SignUpViewModel(
             val authResult = signUpUseCase.invoke(uiState.username, uiState.email, uiState.password)
             uiState = when (authResult) {
                 is ResultWrapper.Success -> {
+                    dataStore.updateData {
+                        AuthResultMapper.UserSettings(authResult.data!!).invoke()
+                    }
+
                     uiState.copy(
                         isAuthenticating = false,
                         isAuthSucceed = true

@@ -50,17 +50,19 @@ fun AppBar(
                     }
                 }
             },
-            navigationIcon = {
-                if (shouldShowNavigationIcon(currentDestination?.route)) {
-                    IconButton(onClick = {
-
-                    }) {
+            navigationIcon = when {
+                shouldShowNavigationIcon(currentDestination?.route) -> ({
+                    IconButton(
+                        onClick = {
+                        }) {
                         Icon(
                             painter = painterResource(id = R.drawable.round_arrow_back),
                             contentDescription = null
                         )
                     }
-                }
+                })
+
+                else -> null
             }
         )
     }

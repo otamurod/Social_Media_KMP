@@ -34,6 +34,7 @@ kotlin {
         androidMain.dependencies {
             api(libs.koin.android)
             implementation(libs.ktor.android)
+            api(libs.androidx.datastore.preferences)
         }
 
         commonMain.dependencies {
@@ -43,6 +44,7 @@ kotlin {
             api(libs.ktor.serialization.json)
             api(libs.koin.core)
             implementation(libs.kotlinx.datetime)
+            implementation(libs.androidx.datastore.preferences.core)
         }
 
         iosMain.dependencies {

@@ -9,10 +9,14 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
 import uz.otamurod.socialmediakmp.android.navigation.SocialAppNavigation
 
 class MainActivity : ComponentActivity() {
+    private val viewModel: MainActivityViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -21,7 +25,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    SocialAppNavigation()
+                    val token = viewModel.authState.collectAsStateWithLifecycle(initialValue = null)
+
+                    SocialAppNavigation(token.value)
                 }
             }
         }
@@ -32,6 +38,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     SocialAppTheme {
-        SocialAppNavigation()
+        SocialAppNavigation(null)
     }
 }

@@ -6,6 +6,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -14,9 +15,13 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.ramcosta.composedestinations.DestinationsNavHost
 import uz.otamurod.socialmediakmp.android.common.components.AppBar
 import uz.otamurod.socialmediakmp.android.feature.NavGraphs
+import uz.otamurod.socialmediakmp.android.feature.destinations.HomeScreenDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 
 @Composable
-fun SocialAppNavigation() {
+fun SocialAppNavigation(
+    token: String?
+) {
     val navHostController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
     val systemUiController = rememberSystemUiController()
@@ -44,10 +49,20 @@ fun SocialAppNavigation() {
             navController = navHostController
         )
     }
+
+    LaunchedEffect(key1 = token) {
+        if (token != null && token.isEmpty()) {
+            navHostController.navigate(LoginDestination.route) {
+                popUpTo(HomeScreenDestination.route) {
+                    inclusive = true
+                }
+            }
+        }
+    }
 }
 
 @Preview(name = "SocialAppNavigation")
 @Composable
 private fun PreviewSocialAppNavigation() {
-    SocialAppNavigation()
+    SocialAppNavigation(null)
 }
