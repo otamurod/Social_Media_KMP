@@ -6,14 +6,36 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import uz.otamurod.socialmediakmp.feature.auth.domain.usecase.SignInUseCase
+import uz.otamurod.socialmediakmp.feature.common.util.ResultWrapper
 
-class LoginViewModel() : ViewModel() {
+class LoginViewModel(
+    private val singInUseCase: SignInUseCase
+) : ViewModel() {
     var uiState by mutableStateOf(LoginUiState())
         private set
 
     fun signIn() {
         viewModelScope.launch {
             uiState = uiState.copy(isAuthenticating = true)
+
+            val authResult = singInUseCase.invoke(uiState.email, uiState.password)
+
+            uiState = when (authResult) {
+                is ResultWrapper.Success -> {
+                    uiState.copy(
+                        isAuthenticating = false,
+                        isAuthSucceed = true
+                    )
+                }
+
+                is ResultWrapper.Error -> {
+                    uiState.copy(
+                        isAuthenticating = false,
+                        authErrorMessage = authResult.message
+                    )
+                }
+            }
         }
     }
 
@@ -31,5 +53,5 @@ data class LoginUiState(
     var password: String = "",
     var isAuthenticating: Boolean = false,
     var authErrorMessage: String? = null,
-    var authenticationSucceed: Boolean = false
+    var isAuthSucceed: Boolean = false
 )

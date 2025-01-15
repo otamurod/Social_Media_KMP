@@ -8,7 +8,7 @@ import uz.otamurod.socialmediakmp.android.feature.destinations.HomeScreenDestina
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.SignUpDestination
 
-@Destination(start = true)
+@Destination
 @Composable
 fun SignUp(
     navigator: DestinationsNavigator
@@ -32,15 +32,6 @@ fun SignUp(
                 popUpTo(SignUpDestination.route) { inclusive = true }
             }
         },
+        onSignUpClick = viewModel::signUp
     )
 }
-
-
-
-
-
-
-
-
-
-
