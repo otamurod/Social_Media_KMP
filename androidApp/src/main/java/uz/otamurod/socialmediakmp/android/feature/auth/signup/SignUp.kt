@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import org.koin.androidx.compose.koinViewModel
-import uz.otamurod.socialmediakmp.android.feature.destinations.HomeScreenDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.HomeDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.SignUpDestination
 
@@ -28,7 +28,7 @@ fun SignUp(
             }
         },
         onNavigateToHome = {
-            navigator.navigate(HomeScreenDestination) {
+            navigator.navigate(HomeDestination) {
                 popUpTo(SignUpDestination.route) { inclusive = true }
             }
         },

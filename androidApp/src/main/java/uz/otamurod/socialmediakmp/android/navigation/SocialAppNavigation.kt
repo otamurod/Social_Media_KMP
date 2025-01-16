@@ -15,7 +15,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.ramcosta.composedestinations.DestinationsNavHost
 import uz.otamurod.socialmediakmp.android.common.components.AppBar
 import uz.otamurod.socialmediakmp.android.feature.NavGraphs
-import uz.otamurod.socialmediakmp.android.feature.destinations.HomeScreenDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.HomeDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 
 @Composable
@@ -53,7 +53,7 @@ fun SocialAppNavigation(
     LaunchedEffect(key1 = token) {
         if (token != null && token.isEmpty()) {
             navHostController.navigate(LoginDestination.route) {
-                popUpTo(HomeScreenDestination.route) {
+                popUpTo(HomeDestination.route) {
                     inclusive = true
                 }
             }
