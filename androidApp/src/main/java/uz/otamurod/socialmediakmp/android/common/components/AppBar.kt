@@ -17,7 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import com.ramcosta.composedestinations.utils.currentDestinationAsState
 import uz.otamurod.socialmediakmp.android.R
 import uz.otamurod.socialmediakmp.android.common.theming.SmallElevation
-import uz.otamurod.socialmediakmp.android.feature.destinations.HomeScreenDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.HomeDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.SignUpDestination
 
@@ -39,7 +39,7 @@ fun AppBar(
             },
             backgroundColor = MaterialTheme.colors.surface,
             actions = {
-                AnimatedVisibility(visible = currentDestination?.route == HomeScreenDestination.route) {
+                AnimatedVisibility(visible = currentDestination?.route == HomeDestination.route) {
                     IconButton(onClick = {
 
                     }) {
@@ -72,7 +72,7 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
     return when (currentDestinationRoute) {
         LoginDestination.route -> R.string.login_destination_title
         SignUpDestination.route -> R.string.signup_destination_title
-        HomeScreenDestination.route -> R.string.home_destination_title
+        HomeDestination.route -> R.string.home_destination_title
         else -> R.string.no_destination_title
     }
 }
@@ -80,7 +80,7 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
 private fun shouldShowNavigationIcon(currentDestinationRoute: String?): Boolean {
     return !(currentDestinationRoute == LoginDestination.route ||
             currentDestinationRoute == SignUpDestination.route ||
-            currentDestinationRoute == HomeScreenDestination.route ||
+            currentDestinationRoute == HomeDestination.route ||
             currentDestinationRoute == null
             )
 }
