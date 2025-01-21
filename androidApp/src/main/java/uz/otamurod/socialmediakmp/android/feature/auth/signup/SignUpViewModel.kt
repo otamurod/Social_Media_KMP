@@ -7,10 +7,10 @@ import androidx.datastore.core.DataStore
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import uz.otamurod.socialmediakmp.android.common.datastore.UserSettings
-import uz.otamurod.socialmediakmp.android.common.datastore.mapper.AuthResultMapper
+import uz.otamurod.socialmediakmp.android.common.data.datastore.UserSettings
+import uz.otamurod.socialmediakmp.android.common.data.datastore.mapper.AuthResultMapper
 import uz.otamurod.socialmediakmp.feature.auth.domain.usecase.SignUpUseCase
-import uz.otamurod.socialmediakmp.feature.common.util.ResultWrapper
+import uz.otamurod.socialmediakmp.common.util.ResultWrapper
 
 class SignUpViewModel(
     private val signUpUseCase: SignUpUseCase,

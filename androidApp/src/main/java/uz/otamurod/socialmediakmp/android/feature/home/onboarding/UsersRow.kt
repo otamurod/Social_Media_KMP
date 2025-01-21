@@ -11,10 +11,10 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import uz.otamurod.socialmediakmp.android.common.dummy_data.sampleUsersDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.sampleUsersDummyData
 import uz.otamurod.socialmediakmp.android.common.theming.LargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
-import uz.otamurod.socialmediakmp.feature.common.domain.model.FollowingUser
+import uz.otamurod.socialmediakmp.common.domain.model.FollowingUser
 
 @Composable
 fun UsersRow(

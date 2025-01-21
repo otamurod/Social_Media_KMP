@@ -24,8 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import uz.otamurod.socialmediakmp.android.R
 import uz.otamurod.socialmediakmp.android.common.components.CommentListItem
 import uz.otamurod.socialmediakmp.android.common.components.PostListItem
-import uz.otamurod.socialmediakmp.android.common.dummy_data.sampleCommentsDummyData
-import uz.otamurod.socialmediakmp.android.common.dummy_data.samplePostsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.sampleCommentsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.samplePostsDummyData
 import uz.otamurod.socialmediakmp.android.common.theming.ExtraLargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.LargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme

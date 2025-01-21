@@ -4,7 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import uz.otamurod.socialmediakmp.android.di.appModule
-import uz.otamurod.socialmediakmp.feature.di.getSharedModules
+import uz.otamurod.socialmediakmp.di.getSharedModules
 
 class SocialApplication : Application() {
     override fun onCreate() {

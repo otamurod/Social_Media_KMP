@@ -24,12 +24,12 @@ import androidx.compose.ui.unit.dp
 import uz.otamurod.socialmediakmp.android.R
 import uz.otamurod.socialmediakmp.android.common.components.CircleImage
 import uz.otamurod.socialmediakmp.android.common.components.FollowButton
-import uz.otamurod.socialmediakmp.android.common.dummy_data.sampleUsersDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.sampleUsersDummyData
 import uz.otamurod.socialmediakmp.android.common.theming.MediumSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SmallSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
-import uz.otamurod.socialmediakmp.feature.common.domain.model.FollowingUser
-import uz.otamurod.socialmediakmp.feature.common.util.toCurrentUrl
+import uz.otamurod.socialmediakmp.common.domain.model.FollowingUser
+import uz.otamurod.socialmediakmp.common.util.toCurrentUrl
 
 @Composable
 fun OnBoardingUserItem(

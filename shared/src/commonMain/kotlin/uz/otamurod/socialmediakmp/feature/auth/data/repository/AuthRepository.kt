@@ -7,8 +7,8 @@ import uz.otamurod.socialmediakmp.feature.auth.data.network.api.entities.request
 import uz.otamurod.socialmediakmp.feature.auth.data.network.mapper.AuthResponseDataMapper
 import uz.otamurod.socialmediakmp.feature.auth.domain.api.repository.AuthRepositoryApi
 import uz.otamurod.socialmediakmp.feature.auth.domain.model.AuthResult
-import uz.otamurod.socialmediakmp.feature.common.util.DispatcherProvider
-import uz.otamurod.socialmediakmp.feature.common.util.ResultWrapper
+import uz.otamurod.socialmediakmp.common.util.DispatcherProvider
+import uz.otamurod.socialmediakmp.common.util.ResultWrapper
 
 internal class AuthRepository(
     private val dispatcher: DispatcherProvider,

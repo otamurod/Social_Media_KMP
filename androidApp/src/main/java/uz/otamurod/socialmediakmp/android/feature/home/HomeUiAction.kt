@@ -1,7 +1,7 @@
 package uz.otamurod.socialmediakmp.android.feature.home
 
-import uz.otamurod.socialmediakmp.feature.common.domain.model.FollowingUser
-import uz.otamurod.socialmediakmp.feature.common.domain.model.Post
+import uz.otamurod.socialmediakmp.common.domain.model.FollowingUser
+import uz.otamurod.socialmediakmp.common.domain.model.Post
 
 sealed interface HomeUiAction {
     data class FollowUserAction(val user: FollowingUser) : HomeUiAction
