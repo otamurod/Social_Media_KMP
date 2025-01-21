@@ -19,6 +19,7 @@ import uz.otamurod.socialmediakmp.android.R
 import uz.otamurod.socialmediakmp.android.common.theming.SmallElevation
 import uz.otamurod.socialmediakmp.android.feature.destinations.HomeDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.PostDetailDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.SignUpDestination
 
 @Composable
@@ -53,8 +54,8 @@ fun AppBar(
             navigationIcon = when {
                 shouldShowNavigationIcon(currentDestination?.route) -> ({
                     IconButton(
-                        onClick = {
-                        }) {
+                        onClick = { navHostController.navigateUp() }
+                    ) {
                         Icon(
                             painter = painterResource(id = R.drawable.round_arrow_back),
                             contentDescription = null
@@ -73,6 +74,7 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
         LoginDestination.route -> R.string.login_destination_title
         SignUpDestination.route -> R.string.signup_destination_title
         HomeDestination.route -> R.string.home_destination_title
+        PostDetailDestination.route -> R.string.post_detail_destination_title
         else -> R.string.no_destination_title
     }
 }
