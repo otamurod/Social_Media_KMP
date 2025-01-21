@@ -4,7 +4,7 @@ import uz.otamurod.socialmediakmp.feature.common.domain.model.Post
 import uz.otamurod.socialmediakmp.feature.common.util.DateFormatter
 
 data class SamplePostDummyData(
-    val id: String,
+    val id: Long,
     val text: String,
     val imageUrl: String,
     val createdAt: String,
@@ -18,7 +18,7 @@ data class SamplePostDummyData(
 ) {
     fun toPostBo(): Post {
         return Post(
-            postId = id.toLong(),
+            postId = id,
             caption = text,
             imageUrl = imageUrl,
             createdAt = DateFormatter.parseDate(createdAt),
@@ -35,7 +35,7 @@ data class SamplePostDummyData(
 
 val samplePostsDummyData = listOf(
     SamplePostDummyData(
-        id = "101",
+        id = 101,
         text = "Exploring the mountains today was an exhilarating experience! The fresh air and breathtaking views were unforgettable.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Jan 10, 2024",
@@ -46,7 +46,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "102",
+        id = 102,
         text = "Had a blast at the beach today! The sunset was truly magical 🌅.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Feb 15, 2024",
@@ -57,7 +57,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "103",
+        id = 103,
         text = "Nothing beats a cozy evening with a good book and a cup of coffee ☕.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Mar 20, 2024",
@@ -68,7 +68,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "104",
+        id = 104,
         text = "Just completed my first marathon today! Feeling proud and exhausted at the same time 🏃‍♂️.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Apr 05, 2024",
@@ -79,7 +79,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "105",
+        id = 105,
         text = "Visited a local art gallery and was blown away by the creativity on display 🎨.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "May 18, 2024",
@@ -90,7 +90,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "106",
+        id = 106,
         text = "Weekend getaway to the countryside. The peace and quiet are unmatched 🌲.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Jun 25, 2024",
@@ -101,7 +101,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "107",
+        id = 107,
         text = "Experimented with a new recipe today. The kitchen might be a mess, but it was worth it 🍳.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Jul 04, 2024",
@@ -112,7 +112,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "108",
+        id = 108,
         text = "The city skyline looked stunning tonight! What a view 🌃.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Aug 12, 2024",
@@ -123,7 +123,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "109",
+        id = 109,
         text = "Tried a new yoga routine this morning. Feeling refreshed and energized 🧘‍♀️.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Sep 02, 2024",
@@ -134,7 +134,7 @@ val samplePostsDummyData = listOf(
         authorImage = "https://picsum.photos/200"
     ),
     SamplePostDummyData(
-        id = "110",
+        id = 110,
         text = "Caught an amazing sunrise during my morning jog 🌄.",
         imageUrl = "https://picsum.photos/400",
         createdAt = "Oct 08, 2024",

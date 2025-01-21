@@ -10,12 +10,14 @@ import uz.otamurod.socialmediakmp.android.common.datastore.UserSettingsSerialize
 import uz.otamurod.socialmediakmp.android.feature.auth.login.LoginViewModel
 import uz.otamurod.socialmediakmp.android.feature.auth.signup.SignUpViewModel
 import uz.otamurod.socialmediakmp.android.feature.home.HomeScreenViewModel
+import uz.otamurod.socialmediakmp.android.feature.post.PostDetailViewModel
 
 val appModule = module {
     viewModel { LoginViewModel(get(), get()) }
     viewModel { SignUpViewModel(get(), get()) }
     viewModel { MainActivityViewModel(get()) }
     viewModel { HomeScreenViewModel() }
+    viewModel { PostDetailViewModel() }
 
     single {
         DataStoreFactory.create(
