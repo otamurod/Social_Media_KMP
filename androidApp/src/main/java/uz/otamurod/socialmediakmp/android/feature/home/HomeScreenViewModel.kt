@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import uz.otamurod.socialmediakmp.android.common.dummy_data.samplePostsDummyData
-import uz.otamurod.socialmediakmp.android.common.dummy_data.sampleUsersDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.samplePostsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.sampleUsersDummyData
 import uz.otamurod.socialmediakmp.android.feature.home.onboarding.OnBoardingUiState
 
 class HomeScreenViewModel : ViewModel() {

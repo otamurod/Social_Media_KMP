@@ -1,7 +1,7 @@
 package uz.otamurod.socialmediakmp.feature.auth.domain.api.repository
 
 import uz.otamurod.socialmediakmp.feature.auth.domain.model.AuthResult
-import uz.otamurod.socialmediakmp.feature.common.util.ResultWrapper
+import uz.otamurod.socialmediakmp.common.util.ResultWrapper
 
 internal interface AuthRepositoryApi {
     suspend fun signUp(

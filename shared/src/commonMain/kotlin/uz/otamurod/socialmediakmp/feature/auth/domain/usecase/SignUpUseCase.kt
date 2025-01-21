@@ -4,7 +4,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import uz.otamurod.socialmediakmp.feature.auth.domain.api.repository.AuthRepositoryApi
 import uz.otamurod.socialmediakmp.feature.auth.domain.model.AuthResult
-import uz.otamurod.socialmediakmp.feature.common.util.ResultWrapper
+import uz.otamurod.socialmediakmp.common.util.ResultWrapper
 
 class SignUpUseCase : KoinComponent {
     private val authRepository: AuthRepositoryApi by inject()

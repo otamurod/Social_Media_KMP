@@ -28,7 +28,7 @@ import uz.otamurod.socialmediakmp.android.common.theming.LargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.LightGray
 import uz.otamurod.socialmediakmp.android.common.theming.MediumSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
-import uz.otamurod.socialmediakmp.feature.common.util.toCurrentUrl
+import uz.otamurod.socialmediakmp.common.util.toCurrentUrl
 
 @Composable
 fun PostHeader(

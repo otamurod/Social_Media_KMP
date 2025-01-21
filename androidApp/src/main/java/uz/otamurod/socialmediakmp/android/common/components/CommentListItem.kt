@@ -19,13 +19,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import uz.otamurod.socialmediakmp.android.R
-import uz.otamurod.socialmediakmp.android.common.dummy_data.sampleCommentsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.sampleCommentsDummyData
 import uz.otamurod.socialmediakmp.android.common.theming.DarkGray
 import uz.otamurod.socialmediakmp.android.common.theming.LargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.LightGray
 import uz.otamurod.socialmediakmp.android.common.theming.MediumSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
-import uz.otamurod.socialmediakmp.feature.common.util.toCurrentUrl
+import uz.otamurod.socialmediakmp.common.util.toCurrentUrl
 import uz.otamurod.socialmediakmp.feature.post.domain.model.PostComment
 
 @Composable

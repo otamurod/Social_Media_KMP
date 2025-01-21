@@ -1,6 +1,6 @@
 package uz.otamurod.socialmediakmp.android.feature.home.onboarding
 
-import uz.otamurod.socialmediakmp.feature.common.domain.model.FollowingUser
+import uz.otamurod.socialmediakmp.common.domain.model.FollowingUser
 
 data class OnBoardingUiState2(
     val shouldShowOnBoarding: Boolean = false,

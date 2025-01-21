@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import uz.otamurod.socialmediakmp.android.common.dummy_data.sampleCommentsDummyData
-import uz.otamurod.socialmediakmp.android.common.dummy_data.samplePostsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.sampleCommentsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.samplePostsDummyData
 
 class PostDetailViewModel() : ViewModel() {
     var postUiState by mutableStateOf(PostUiState())

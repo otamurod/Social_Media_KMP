@@ -6,7 +6,7 @@ import io.ktor.client.request.setBody
 import uz.otamurod.socialmediakmp.feature.auth.data.network.api.entities.request.SignInRequest
 import uz.otamurod.socialmediakmp.feature.auth.data.network.api.entities.request.SignUpRequest
 import uz.otamurod.socialmediakmp.feature.auth.data.network.api.entities.response.AuthResponse
-import uz.otamurod.socialmediakmp.feature.common.data.network.api.AuthApi
+import uz.otamurod.socialmediakmp.common.data.network.api.AuthApi
 
 internal class AuthService : AuthApi() {
     suspend fun signUp(request: SignUpRequest): AuthResponse {

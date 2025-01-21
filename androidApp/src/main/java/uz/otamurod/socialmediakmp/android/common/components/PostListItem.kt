@@ -18,12 +18,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import uz.otamurod.socialmediakmp.android.R
-import uz.otamurod.socialmediakmp.android.common.dummy_data.samplePostsDummyData
+import uz.otamurod.socialmediakmp.android.common.data.dummydata.samplePostsDummyData
 import uz.otamurod.socialmediakmp.android.common.theming.ExtraLargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.LargeSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
-import uz.otamurod.socialmediakmp.feature.common.domain.model.Post
-import uz.otamurod.socialmediakmp.feature.common.util.toCurrentUrl
+import uz.otamurod.socialmediakmp.common.domain.model.Post
+import uz.otamurod.socialmediakmp.common.util.toCurrentUrl
 
 @Composable
 fun PostListItem(

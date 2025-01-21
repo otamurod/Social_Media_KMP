@@ -33,8 +33,8 @@ import uz.otamurod.socialmediakmp.android.common.theming.MediumSpacing
 import uz.otamurod.socialmediakmp.android.common.theming.SocialAppTheme
 import uz.otamurod.socialmediakmp.android.feature.home.onboarding.OnBoardingSection
 import uz.otamurod.socialmediakmp.android.feature.home.onboarding.OnBoardingUiState
-import uz.otamurod.socialmediakmp.feature.common.domain.model.Post
-import uz.otamurod.socialmediakmp.feature.common.util.Constants
+import uz.otamurod.socialmediakmp.common.domain.model.Post
+import uz.otamurod.socialmediakmp.common.util.Constants
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

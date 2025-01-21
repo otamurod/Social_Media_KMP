@@ -20,6 +20,7 @@ import uz.otamurod.socialmediakmp.android.common.theming.SmallElevation
 import uz.otamurod.socialmediakmp.android.feature.destinations.HomeDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.PostDetailDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.ProfileDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.SignUpDestination
 
 @Composable
@@ -75,6 +76,7 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
         SignUpDestination.route -> R.string.signup_destination_title
         HomeDestination.route -> R.string.home_destination_title
         PostDetailDestination.route -> R.string.post_detail_destination_title
+        ProfileDestination.route -> R.string.profile_destination_title
         else -> R.string.no_destination_title
     }
 }
