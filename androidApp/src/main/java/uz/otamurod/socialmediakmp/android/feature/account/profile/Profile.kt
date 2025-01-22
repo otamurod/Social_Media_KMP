@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import org.koin.androidx.compose.koinViewModel
+import uz.otamurod.socialmediakmp.android.feature.destinations.EditProfileDestination
 
 @Composable
 @Destination
@@ -17,7 +18,7 @@ fun Profile(
         userInfoUiState = viewModel.userInfoUiState,
         profilePostsUiState = viewModel.profilePostsUiState,
         onButtonClick = {
-
+            navigator.navigate(EditProfileDestination(userId))
         },
         onFollowersClick = {
 
@@ -34,7 +35,7 @@ fun Profile(
         onCommentClick = {
 
         },
-        fetchData = {
+        fetchProfile = {
             viewModel.fetchProfile(userId)
         }
     )

@@ -32,7 +32,7 @@ fun ProfileScreen(
     onPostClick: (Post) -> Unit,
     onLikeClick: (String) -> Unit,
     onCommentClick: (String) -> Unit,
-    fetchData: () -> Unit,
+    fetchProfile: () -> Unit,
 ) {
     if (userInfoUiState.isLoading) {
         Box(
@@ -94,7 +94,7 @@ fun ProfileScreen(
     }
 
     LaunchedEffect(key1 = Unit) {
-        fetchData()
+        fetchProfile()
     }
 }
 
@@ -112,7 +112,7 @@ private fun PreviewProfileScreen() {
                 onPostClick = {},
                 onLikeClick = {},
                 onCommentClick = {},
-                fetchData = {}
+                fetchProfile = {}
             )
         }
     }
