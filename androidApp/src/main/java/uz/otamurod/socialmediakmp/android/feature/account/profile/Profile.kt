@@ -5,6 +5,8 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import org.koin.androidx.compose.koinViewModel
 import uz.otamurod.socialmediakmp.android.feature.destinations.EditProfileDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.FollowersDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.FollowingDestination
 
 @Composable
 @Destination
@@ -21,10 +23,10 @@ fun Profile(
             navigator.navigate(EditProfileDestination(userId))
         },
         onFollowersClick = {
-
+            navigator.navigate(FollowersDestination(userId))
         },
         onFollowingClick = {
-
+            navigator.navigate(FollowingDestination(userId))
         },
         onPostClick = {
 

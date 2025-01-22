@@ -18,6 +18,8 @@ import com.ramcosta.composedestinations.utils.currentDestinationAsState
 import uz.otamurod.socialmediakmp.android.R
 import uz.otamurod.socialmediakmp.android.common.theming.SmallElevation
 import uz.otamurod.socialmediakmp.android.feature.destinations.EditProfileDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.FollowersDestination
+import uz.otamurod.socialmediakmp.android.feature.destinations.FollowingDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.HomeDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.LoginDestination
 import uz.otamurod.socialmediakmp.android.feature.destinations.PostDetailDestination
@@ -77,6 +79,8 @@ private fun getAppBarTitle(currentDestinationRoute: String?): Int {
         HomeDestination.route -> R.string.home_destination_title
         PostDetailDestination.route -> R.string.post_detail_destination_title
         EditProfileDestination.route -> R.string.edit_profile_destination_title
+        FollowingDestination.route -> R.string.following_text
+        FollowersDestination.route -> R.string.followers_text
         else -> R.string.no_destination_title
     }
 }
